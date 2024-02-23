@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            font-family: 'Roboto', sans-serif; /* Use Roboto font */
+            background-color: #f8f8f8; /* Light grey background color */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        .container {
+            width: 100%; /* Make container full width */
+            max-width: 1200px; /* Set max-width for content */
+            margin: 0 auto; /* Center container */
+            padding: 20px; /* Add padding to container */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        .header {
+            background-color: #3f51b5; /* Dark blue header background color */
+            color: #ffffff; /* White text color */
+            padding: 20px; /* Add padding to header */
+            text-align: center; /* Center-align header text */
+        }
+        form {
+            background-color: #ffffff; /* White form background color */
+            padding: 30px; /* Add padding to form */
+            border-radius: 10px; /* Add border radius to form */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow to form */
+        }
+        label {
+            display: block; /* Display labels as block elements */
+            margin-bottom: 10px; /* Add spacing below each label */
+            font-weight: 700; /* Make labels bold */
+        }
+        input[type="number"] {
+            width: calc(100% - 22px); /* Make number inputs fill the entire width */
+            padding: 10px; /* Add padding to number inputs */
+            margin-bottom: 20px; /* Add spacing below each number input */
+            border: 1px solid #ccc; /* Add border to inputs */
+            border-radius: 5px; /* Add border radius to inputs */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button color */
+            color: #ffffff; /* White text color */
+            padding: 15px 20px; /* Add padding to the submit button */
+            border: none; /* Remove border from the submit button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 5px; /* Add border radius to the submit button */
+            display: block; /* Display the submit button as a block element */
+            margin: 0 auto; /* Center-align the submit button */
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Stock Price Predictor</h1>
+        </div>
+    </header>
+    <div class="container">
+        <form action="/predict" method="post">
+            <label for="open">Open:</label>
+            <input type="number" id="open" name="open" required>
+            <label for="high">High:</label>
+            <input type="number" id="high" name="high" required>
+            <label for="low">Low:</label>
+            <input type="number" id="low" name="low" required>
+            <label for="volume">Volume:</label>
+            <input type="number" id="volume" name="volume" required>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
